@@ -5,7 +5,7 @@
 				<header>
 					<div class="container">
 						<div class="row">
-							<div class="col-md-6"><a href="javascript:void(0)"> <img src="{{ asset('public/front/images/logo.jpeg') }}" class="The Go To"> </a></div>
+							<div class="col-md-6"><a href="javascript:void(0)"> <img src="{{ asset('public/front/images/logo.png') }}" class="The Go To"> </a></div>
 							<div class="col-md-6">
 								<div class="menusk">
 									<ul>

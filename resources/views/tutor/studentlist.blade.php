@@ -8,9 +8,9 @@
                 <!-- Page Heading -->
                 <div class="go-title">
                     <div class="pull-right">
-                    <!-- <a href="{{ route('tutor_create') }}" class="btn btn-primary btn-add"><i class="fa fa-plus"></i> Add Tutor</a> -->
+                    <a href="{{ route('student_create') }}" class="btn btn-primary btn-add"><i class="fa fa-plus"></i> Add Student</a>
                     </div>
-                     <h3>Students<!-- <a href="" class="btn btn-primary"><strong>Pending Tutors (0)</strong> </a>--></h3>
+                    <h3>Student List</h3>
                     <div class="go-line"></div>
                 </div>
                 <!-- Page Content -->
@@ -28,13 +28,13 @@
                             <thead>
                             <tr>
                                 <th>S.No</th>
-                                <th>Name</th>
-                                <th>Email</th>
+                                <th>Tutor Name</th>
+                                <th>Tutor Email</th>
                                 <th>Phone</th>
                                 <th width="10%">Address</th>
-                                <th>Tutor Name</th>
+                                <th>Student spe</th>
                                 <th>Status</th>
-                                <!-- <th>Actions</th> -->
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -57,13 +57,13 @@
                                 @endif
                                     </td>
 
-                                <!-- <td>
+                                <td>
                                     <a href="{{ route('tutor_email', $tutor->id)}}" 
                                        onclick="return confirm('Are you sure, you want to sand  mail to this tutor?')" class="btn btn-primary btn-xs"><i class="fa fa-send"></i> Email</a>
                                     <a href="{{ route('tutor_edit',$tutor->id) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                                     <a onclick="return confirm('Are you sure, you want to delete this tutor?')" href="{{ route('tutor_delete',$tutor->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> del</a>
 
-                                    </td> -->
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

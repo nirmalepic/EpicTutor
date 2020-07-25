@@ -2,11 +2,10 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
- 
-				
-				<form class="login100-form validate-form" method="post" action="{{ route('login') }}">
+
+					 <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                  @csrf
-					<div class="login-logo"><a href=""> <img src="{{ asset('public/front/images/logo.jpeg') }}"> </a></div>
+					<div class="login-logo"><a href=""> <img src="{{ asset('public/front/images/logo.png') }}"> </a></div>
 					<span class="login100-form-title">Tutor Login</span>
                      @if (session('status'))
                        <div class="alert alert-success">
@@ -23,16 +22,16 @@
 				        @endif
 
 					<div class="wrap-input100 validate-input" data-validate = "">
-						<input class="input100" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+						<input class="input100" type="email" name="email" placeholder="Username" value="{{ old('uname') }}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
-						 @error('email')
+						<!--  @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                            @enderror
+                            @enderror -->
 					</div>					
 
 					<div class="wrap-input100 validate-input" data-validate = "">
@@ -41,11 +40,11 @@
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
-						 @error('password')
+						 <!-- @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                            @enderror
+                            @enderror -->
 					</div>
 
 					<div class="wrap-input100 validate-input colorwhite">

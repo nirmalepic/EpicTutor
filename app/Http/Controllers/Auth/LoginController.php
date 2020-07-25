@@ -81,9 +81,15 @@ class LoginController extends Controller
         $this->guard()->logout();
         $request->session()->invalidate();
  
-        if($role == 'admin')
+        if($role == 'admin'){
         return $this->loggedOut($request) ?: redirect('/admin');
-        else
-        return $this->loggedOut($request) ?: redirect('/');
+        }
+        if($role == 'tutor'){
+            
+          return $this->loggedOut($request) ?: redirect('/tutor');
+        }
+        else{
+        return $this->loggedOut($request) ?: redirect('/student');
+      }
     }
 }

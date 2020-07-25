@@ -28,6 +28,8 @@ class CreateUsersTable extends Migration
             $table->date('dob')->nullable();
             $table->string('role')->nullable();
             $table->string('location')->nullable();
+            $table->string('city')->nullable();
+            $table->bigInteger('pincode')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -8,9 +8,9 @@
                 <!-- Page Heading -->
                 <div class="go-title">
                     <div class="pull-right">
-                        <a href="{{route('slider_create')}}" class="btn btn-primary btn-add"><i class="fa fa-plus"></i> Add New Slider</a>
+                    <a href="{!! url('admin/vendors') !!}" class="btn btn-default btn-back"><i class="fa fa-arrow-circle-left"></i> Back</a>
                     </div>
-                    <h3>Home Page Sliders</h3>
+                    <h3>Vendors Pending</h3>
                     <div class="go-line"></div>
                 </div>
                 <!-- Page Content -->
@@ -27,28 +27,33 @@
                         <table class="table table-striped table-bordered" cellspacing="0" id="example" width="100%">
                             <thead>
                             <tr>
-                                <th>Slider Image</th>
-                                <th>Title</th>
-                                <th width="15%">Description</th>
+                                <th>Vendor Name</th>
+                                <th width="10%">Vendor Email</th>
+                                <th>Phone</th>
+                                <th width="10%">Address</th>
+                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($sliders as $slider)
-                                    <tr>
-                                        <td><img style="width: 300px;" src="{{url('/')}}/assets/images/sliders/{{$slider->image}}"></td>
-                                        <td>{{$slider->title}}</td>
-                                        <td>{{$slider->text}}</td>
-                                        <td>
-                                            <form method="POST" action="{!! action('SliderController@destroy',['id' => $slider->id]) !!}">
-                                                {{csrf_field()}}
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <a href="sliders/{{$slider->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit </a>
-                                                <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Remove </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                            @foreach($vendors as $vendor)
+                                <tr>
+                                    <td>{{$vendor->name}}</td>
+                                    <td>{{$vendor->email}}</td>
+                                    <td>{{$vendor->phone}}</td>
+                                    <td>{{$vendor->address}}</td>
+                                    <td>Pending</td>
+
+                                    <td>
+
+                                        <a href="{{url('admin/vendors')}}/{{$vendor->id}}" class="btn btn-primary btn-xs"><i class="fa fa-check"></i> View Details </a>
+
+                                        <a href="{{url('admin/vendors/accept')}}/{{$vendor->id}}" class="btn btn-success btn-xs"><i class="fa fa-check"></i> Accept</a>
+                                        <a href="{{url('admin/vendors/reject')}}/{{$vendor->id}}" class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Reject</a>
+
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -59,6 +64,7 @@
         <!-- /.container-fluid -->
     </div>
     <!-- /#page-wrapper -->
+
 
 @stop
 

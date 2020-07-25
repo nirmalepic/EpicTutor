@@ -1,4 +1,4 @@
-@extends('admin.includes.master-admin')
+@extends('tutor.includes.master-tutor')
 
 @section('content')
 

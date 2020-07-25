@@ -6,7 +6,7 @@
 			
 				<form class="login100-form validate-form" method="post" action="{{ route('tutor_register' )}}">
 					@csrf
-					<div class="login-logo"><a href=""> <img src="{{ asset('public/front/images/logo.jpeg') }}"> </a></div>
+					<div class="login-logo"><a href=""> <img src="{{ asset('public/front/images/logo.png') }}"> </a></div>
 					<span class="login100-form-title">Tutor Registration</span>
 					@if(session()->has('success')) {
 					<div class="alert alert-info">
@@ -14,111 +14,134 @@
                    
                  </div>
                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                        </div>
+                        @endif
 
 					<div class="wrap-input100 validate-input" data-validate = "">
-						<input class="input100" type="text" name="name" placeholder="Full Name" value="{{ old('name') }}">
+						<input class="input100" type="text" autocomplete="off" name="name" placeholder="Full Name" value="{{ old('name') }}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
-						 @error('name')
+						<!--  @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                            @enderror
+                            @enderror -->
 					</div>					
 
 					<div class="wrap-input100 validate-input" data-validate = "">
-						<input class="input100" type="text" name="email" placeholder="Email" value="{{ old('email') }}">
+						<input class="input100" type="text" autocomplete="off" name="email" placeholder="Email" value="{{ old('email') }}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
-						 @error('email')
+						 <!-- @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                            @enderror
+                            @enderror -->
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "">
-						<input class="input100" type="number" name="contact" placeholder="Contact" value="{{ old('contact') }}">
+						<input class="input100" type="number" name="contact" autocomplete="off" placeholder="Contact" value="{{ old('contact') }}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
-						 @error('contact')
+						 <!-- @error('contact')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                            @enderror
+                            @enderror -->
 					</div>
+                 
                     <div class="wrap-input100 validate-input" data-validate = "">
-                        <input class="input100" type="text" name="business_name" placeholder="Business name" value="{{ old('business_name') }}">
+                        <input class="input100" type="text" autocomplete="off" name="address" placeholder="Address " value="{{ old('address') }}">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
-                        @error('business_name')
+
+                       <!--  @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror -->
+                    </div> 
+                    <div class="wrap-input100 validate-input" data-validate = "">
+                        <input class="input100" type="text" autocomplete="off" name="city" placeholder="City " value="{{ old('city') }}">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+
+                      <!--   @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong style="color:red">* {{ $message }}</strong>
+                                    </span>
+                                @enderror -->
+                    </div>  
+                     <div class="wrap-input100 validate-input" data-validate = "">
+                        <input class="input100" type="text" autocomplete="off" name="pincode" placeholder="Pincode " value="{{ old('pincode') }}">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+<!-- 
+                        @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong style="color:red">* {{ $message }}</strong>
+                                    </span>
+                                @enderror -->
                     </div>
                     <div class="wrap-input100 validate-input" data-validate = "">
-                        <input class="input100" type="text" name="business_address" placeholder="Business address " value="{{ old('business_address') }}">
+                        <input class="input100" type="text" autocomplete="off" name="studentspecify" placeholder="Students Specify " value="{{ old('studentspecify') }}">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
 
-                        @error('business_address')
+                      <!--   @error('city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                                @enderror
-                    </div>  
-                    <div class="wrap-input100 validate-input" data-validate = "">
-             
-                       <select class="input100" name="account_type"  required="required" >
-                          <option>Select Account type</option>
-                         <option value="paid">Paid</option>
-                         <option value="free">Free</option>
-                              </select>
-                              <span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-						 @error('account_type')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">* {{ $message }}</strong>
-                                    </span>
-                                @enderror
-                    </div> 
+                         @enderror -->
+                    </div>
+                    
+                   
 					<div class="wrap-input100 validate-input" data-validate = "">
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100" type="password" autocomplete="off" name="password" placeholder="Password" title="Should have at least 1 lowercase AND 1 uppercase AND 1 number AND 1 symbol">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
-						 @error('password')
+						<!--  @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                            @enderror
+                            @enderror -->
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "">
-						<input class="input100" type="password" name="password_confirmation" placeholder="Confirm Password">
+						<input class="input100" type="password" autocomplete="off" name="password_confirmation" placeholder="Confirm Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
-						 @error('password_confirmation')
+						 <!-- @error('password_confirmation')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red">* {{ $message }}</strong>
                                     </span>
-                            @enderror
+                            @enderror -->
 					</div>					
 					
 					<div class="container-login100-form-btn">
@@ -142,7 +165,7 @@
 $("document").ready(function(){
     setTimeout(function(){
         $("div.alert").remove();
-    }, 5000 ); 
+    }, 10000 ); 
 
 });
 </script>

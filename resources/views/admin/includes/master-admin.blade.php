@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
     <meta name="description" content="GeniusOcean Admin Panel.">
     <meta name="author" content="GeniusOcean">
-    {{-- <link rel="icon" type="image/png" href="{{url('/')}}/public/assets/images/{{$settings[0]->favicon}}" /> --}}
+    <link rel="icon" type="image/png" href="{{ asset('public/front/images/favicon.png') }}" /> 
 
     <title>Admin Panel</title>
 
@@ -43,14 +43,15 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="{!! url('admin/dashboard') !!}">
-            <img class="logo" src="{!! url('public/assets/images/logo') !!}" alt="LOGO">
+            <img class="logo" src="{{ asset('public/front/images/logo.png') }}" alt="LOGO">
         </a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
 
         <li class="dropdown">
-            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->fname }} 
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                {{ Auth::user()->fname }} 
                 <b class="fa fa-angle-down"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="{!! url('admin/adminprofile') !!}"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>

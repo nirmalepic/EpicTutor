@@ -9,7 +9,7 @@
                 <!-- Page Heading -->
                 <div class="go-title">
                     <div class="pull-right">
-                        <a href="{!! url('admin/tutor') !!}" class="btn btn-default btn-back"><i class="fa fa-arrow-left"></i> Back</a>
+                        <a href="{!! url('tutor/student') !!}" class="btn btn-default btn-back"><i class="fa fa-arrow-left"></i> Back</a>
                     </div>
                     <h3>Add Tutors</h3>
                     <div class="go-line"></div>
@@ -47,25 +47,67 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Email<span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="name" class="form-control col-md-7 col-xs-12" name="email" placeholder="Email" value="{{old('email')}}" type="email">
+                                    <input id="email" class="form-control col-md-7 col-xs-12" name="email" placeholder="Email" value="{{old('email')}}" type="email">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Mobile<span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mobile">Mobile<span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="name" class="form-control col-md-7 col-xs-12" name="mobile" placeholder="Mobile" value="{{old('mobile')}}" type="text">
+                                    <input id="mobile" class="form-control col-md-7 col-xs-12" name="mobile" placeholder="Mobile" value="{{old('mobile')}}" type="text">
                                 </div>
                             </div>
                                <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Student Specification<span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Class<span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="name" class="form-control col-md-7 col-xs-12" name="studentspecify" placeholder="Student Specification" value="{{old('studentspecify')}}" type="text">
+                                   <select class="form-control"  name="classname">
+                                    <option value="" hidden="hidden">Select Class Name</option>
+                                    <option value="PLAY GROUP"> PLAY GROUP</option>
+                                    <option value="NURSERY"> NURSERY</option>
+                                    <option value="LKG"> LKG</option>
+                                    <option value="UKG"> UKG</option>
+                                    
+                                        <option value="I"> I</option>
+                                        <option value="II"> II</option>
+                                        <option value="III"> III</option>
+                                        <option value="IV"> IV</option>
+                                        <option value="V"> V</option>
+                                        <option value="VI"> VI</option>
+                                        <option value="VII"> VII</option>
+                                        <option value="VIII"> VIII</option>
+                                        <option value="IX"> IX</option>
+                                        <option value="X"> X</option>
+                                        <option value="XI"> XI</option>
+                                        <option value="XII"> XII</option>
+                                    
+                                </select>
                                 </div>
                             </div>
 
-                             
+                           
+                              <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Address
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="address" class="form-control col-md-7 col-xs-12" name="address" placeholder="Address" value="{{old('address')}}" type="text">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">City
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="city" class="form-control col-md-7 col-xs-12" name="city" placeholder="City" value="{{old('city')}}" type="text">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Pincode
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="pincode" class="form-control col-md-7 col-xs-12" name="pincode" placeholder="pincode" value="{{old('pincode')}}" type="text">
+                                </div>
+                            </div>
+
                              <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Status
                                 </label>
@@ -76,11 +118,11 @@
                                             </select>
                             </div>
                             </div>
-                             
+
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
-                                    <button type="submit" class="btn btn-success btn-block">Add Tutor</button>
+                                    <button type="submit" class="btn btn-success btn-block">Add Student</button>
                                 </div>
                             </div>
                         </form>

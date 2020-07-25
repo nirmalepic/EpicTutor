@@ -19,7 +19,7 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 Route::get('/login', function () {
-    return view('admin.index');
+    return redirect('admin');
 });
 Route::get('/tutor/register', function () {
      return view('front.register');
@@ -33,18 +33,15 @@ Route::get('/tutor/login', function () {
 Route::get('/tutor', function () {	
     return view('front.index');
 });
+Route::group(['middleware' => ['guest']], function () { 
+ Route::post('/tutor/login', 'TutorController@index')->name('tutor_login');
+ Route::post('/tutor/register', 'TutorController@tutorRegister')->name('tutor_register');
+});
 
 Auth::routes();
 
-//Route::post('/vendor/save', 'VendorController@store')->name('vendorRegister');
-
-Route::group(['middleware' => ['guest']], function () { 
- Route::post('/tutor/login', 'TutorController@index')->name('tutor_login');
- Route::post('/tutor/register', 'TutorController@store')->name('tutor_register');
-});
-
 Route::group(['middleware' => ['auth']], function () {
-   Route::get('/tutor/dashboard', 'TutorController@tutorDashboard')->name('tutor_ashboard');
+   Route::get('/tutor/dashboard', 'TutorController@tutorDashboard')->name('tutor_dashboard');
 });
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->group(function () {
@@ -133,3 +130,14 @@ Route::prefix('admin')->group(function () {
 
 	
 });
+Route::prefix('tutor')->group(function () {
+	Route::get('/student', 'StudentController@index')->name('student_list');
+	Route::get('/student/create', 'StudentController@create')->name('student_create');
+	Route::post('/student/store', 'StudentController@store')->name('student_store');
+	Route::get('/student/status/{id}/{status}/', 'StudentController@changeStatus')->name('student_status');
+	Route::get('/student/destroy/{id}/', 'StudentController@destroy')->name('student_delete');
+	Route::get('/student/edit/{id}/', 'StudentController@edit')->name('student_edit');
+	Route::post('/student/update/{id}/', 'StudentController@update')->name('student_update');
+	Route::get('/student/email/{id}/', 'StudentController@emailTutor')->name('student_email');
+	Route::post('/student/sendemail/', 'StudentController@sendEmailTutor')->name('send_student_email');
+	});

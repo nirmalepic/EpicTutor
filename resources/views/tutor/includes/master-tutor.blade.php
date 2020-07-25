@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
     <meta name="description" content="GeniusOcean Admin Panel.">
     <meta name="author" content="GeniusOcean">
-    {{-- <link rel="icon" type="image/png" href="{{url('/')}}/public/assets/images/{{$settings[0]->favicon}}" /> --}}
-
-    <title> Tutor Panel</title>
+    <link rel="icon" type="image/png" href="{{ asset('public/front/images/favicon.png') }}"> 
+    <title>Tutor Panel</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -42,20 +41,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{!! url('tutor/dashboard') !!}">
-            <img class="logo" src="{!! url('public/assets/images/logo') !!}" alt="LOGO">
+        <a class="navbar-brand" href="{!! url('admin/dashboard') !!}">
+            <img class="logo" src="{{ asset('public/front/images/logo.png') }}" alt="LOGO">
         </a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
 
         <li class="dropdown">
-            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->fname }} 
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                {{ Auth::user()->fname }} 
                 <b class="fa fa-angle-down"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="{!! url('admin/adminprofile') !!}"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                <li><a href="{!! url('admin/adminpassword') !!}"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-               <!--  <li class="divider"></li> -->
+                <li><a href="{!! url('tutor/adminprofile') !!}"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                <li><a href="{!! url('tutor/adminpassword') !!}"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                <!-- <li class="divider"></li> -->
                 <li>
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault();
@@ -76,9 +76,50 @@
             <li>
                 <a href="{!! url('tutor/dashboard') !!}"><i class="fa fa-fw fa-home"></i>  Dashboard</a>
             </li>
-			<li>
-            <a href="{{route('tutor_list')}}"><i class="fa fa-fw fa-user"></i> Tutors</a>
+            <li>
+                <a href="#"><i class="fa fa-fw fa-cogs"></i> General Settings</a>
             </li>
+			<li>
+                <a href="{{route('student_list')}}"><i class="fa fa-fw fa-user"></i>Students</a>
+            </li>
+          
+            <li>
+                <a href="{!! url('tutor/categories') !!}"><i class="fa fa-fw fa-sitemap"></i>Classes</a>
+            </li>                        
+            
+             <li>
+                <a href="{{route('blog_list')}}"><i class="fa fa-fw fa-file-text"></i> Assignment</a>
+            </li>
+            <li>
+                <a href="{!! url('tutor/sliders') !!}"><i class="fa fa-fw fa-photo"></i> Fee Receipt</a>
+            </li>
+            <li>
+                <a href="{!! url('tutor/sliders') !!}"><i class="fa fa-fw fa-photo"></i>Tests</a>
+            </li>
+            <!-- <li>
+                <a href="{!! url('admin/pagesettings') !!}"><i class="fa fa-fw fa-file-code-o"></i> Page Settings</a>
+            </li>
+            <li>
+                <a href="{!! url('admin/language-settings') !!}"><i class="fa fa-fw fa-language"></i> Language Settings</a>
+            </li>
+            <li>
+                <a href="{!! url('admin/testimonial') !!}"><i class="fa fa-fw fa-quote-right"></i> Testimonial Section</a>
+            </li>
+            <li>
+                <a href="{!! url('admin/themecolor') !!}"><i class="fa fa-fw fa-paint-brush"></i> Theme Color Settings</a>
+            </li>
+            
+            <li>
+                <a href="{!! url('admin/social') !!}"><i class="fa fa-fw fa-paper-plane"></i> Social Settings</a>
+            </li>
+            <li>
+                <a href="{!! url('admin/tools') !!}"><i class="fa fa-fw fa-wrench"></i> Seo Tools</a>
+            </li>
+            
+            <li>
+                <a href="{!! url('admin/subscribers') !!}"><i class="fa fa-fw fa-group"></i> Subscribers</a>
+            </li> -->
+
         </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -107,7 +148,15 @@
 <script type="text/javascript" src="{{ URL::asset('public/assets/js/Chart.min.js')}}">
     
 </script>
+
 @yield('footer')
+<!-- BEGIN : Footer-->
+<!-- <footer class="footer footer-static footer-light">
+    <p class="clearfix text-muted text-sm-center px-2">
+    <span>Copyright  &copy; 2019 <a href="javascript:void(0)" target="_blank" class="text-bold-800 primary darken-2">EpicTutor </a>, All rights reserved. </span>
+    </p>
+</footer> -->
+<!-- End : Footer-->
 </body>
 </html>
 

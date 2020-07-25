@@ -32,7 +32,7 @@
                         <i class="fa fa-group"></i>
                     </div>
                     <div class="dashboard-product-type col-md-8">
-                       Teachers!
+                       Classes!
                         <span class="product-quantity">{{ \App\User::where('role','teacher')->count() }}</span>
                     </div>
                     <div class="border-bottom"></div>
@@ -44,6 +44,61 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-dashboard-product-head">
+                    <div class="dashboard-product-image col-md-4">
+                        <i class="fa fa-group"></i>
+                    </div>
+                    <div class="dashboard-product-type col-md-8">
+                       Assignments!
+                        <span class="product-quantity">{{ \App\User::where('role','teacher')->count() }}</span>
+                    </div>
+                    <div class="border-bottom"></div>
+                    <div class="bottom-link">
+                        <a class="detail-link clearfix btn-block" href="{{url('admin/teacher')}}">
+                            <span class="pull-left">View All</span>
+                            <span class="pull-right"><i class="fa fa-chevron-circle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-dashboard-product-head">
+                    <div class="dashboard-product-image col-md-4">
+                        <i class="fa fa-group"></i>
+                    </div>
+                    <div class="dashboard-product-type col-md-8">
+                        Fee Receipt!
+                        <span class="product-quantity">{{ \App\User::where('role','teacher')->count() }}</span>
+                    </div>
+                    <div class="border-bottom"></div>
+                    <div class="bottom-link">
+                        <a class="detail-link clearfix btn-block" href="{{url('admin/teacher')}}">
+                            <span class="pull-left">View All</span>
+                            <span class="pull-right"><i class="fa fa-chevron-circle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-dashboard-product-head">
+                    <div class="dashboard-product-image col-md-4">
+                        <i class="fa fa-group"></i>
+                    </div>
+                    <div class="dashboard-product-type col-md-8">
+                        Tests!
+                        <span class="product-quantity">{{ \App\User::where('role','teacher')->count() }}</span>
+                    </div>
+                    <div class="border-bottom"></div>
+                    <div class="bottom-link">
+                        <a class="detail-link clearfix btn-block" href="{{url('admin/teacher')}}">
+                            <span class="pull-left">View All</span>
+                            <span class="pull-right"><i class="fa fa-chevron-circle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             
             </div>
         </div>

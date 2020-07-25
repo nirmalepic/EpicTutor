@@ -7,13 +7,14 @@ use Illuminate\Support\Facades\Session;
 use App\User;
 use App\Mail\Email;
 use Mail;
+use Auth;
 
 class TutorController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('guest');
     }
     /**
      * Display a listing of the resource.
@@ -46,20 +47,22 @@ class TutorController extends Controller
     public function store(Request $request)
     {
          $request->validate([
-         'name'=>'required',
+         'name'=>'required|string',
          'email'=>'required|email|unique:users',
          'mobile'=>'required|numeric|unique:users',
         ]);
          $random = str_shuffle('abcdefghjklmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ1234567890!$%^&!$%^&');
           $password = substr($random, 0, 8);
+          $password_enc = bcrypt($password);
+
          $form_data=array(
             'fname' =>$request->name,
             'email' =>$request->email,
             'mobile' =>$request->mobile,
             'students_specify' =>$request->studentspecify,  
             'status' =>$request->status,   
-            'password' =>$password,   
-            'role' =>'tutor',   
+            'password' =>$password_enc,   
+            'role' =>'tutor',
          );
         User::create($form_data);
         
@@ -177,5 +180,51 @@ class TutorController extends Controller
     public function teacherDetails(){
        $teachers=User::where('role','teacher')->orderBy('id','desc')->get();
        return view('admin.teacherlist',compact('teachers'));
+    }
+    public function tutorRegister(Request $request){
+       $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users,email',
+            'contact' => 'required|min:10',
+            'address' => 'required',
+            'city' => 'required',
+            'pincode' => 'required|numeric|min:6',
+            'studentspecify' => 'required|numeric',
+            'password' => 'required|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+            'password_confirmation' => 'required|same:password'
+        ]);
+         $form_data=array(
+            'fname' =>$request->name,
+            'email' =>$request->email,
+            'mobile' =>$request->contact,
+            'students_specify' =>$request->studentspecify,  
+            'location' =>$request->address,  
+            'city' =>$request->city,  
+            'pincode' =>$request->pincode,  
+            'status' =>0,   
+            'password' =>bcrypt($request->password),   
+            'role' =>'tutor',
+         );
+         //dd($form_data);
+        User::create($form_data);
+        
+        $tutor_mailId = $request->email;
+            $data = array(
+                'parameter'=>'tutor_register',
+                'tutor_name'=>$request->name,
+                'tutor_email' => $request->email,
+                'tutor_mobile' => $request->mobile,
+                'tutor_password' => $request->password,
+                );
+        Mail::to($tutor_mailId)->send(new Email($data));
+        Session::flash('message', 'New Tutor Added Successfully.');
+        return redirect()->route('tutor_register');
+
+    }
+     public function tutorDashboard(){
+        $tutor_id = Auth::user()->id;
+        $tutors=User::Where('id',$tutor_id)->orderBy('id','desc')->get();
+         //dd($tutors);
+        return view('tutor.dashboard',compact('tutors'));
     }
 }
