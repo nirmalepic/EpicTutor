@@ -56,7 +56,7 @@ Route::prefix('admin')->group(function () {
 	Route::post('/tutor/update/{id}/', 'TutorController@update')->name('tutor_update');
 	Route::get('/tutor/email/{id}/', 'TutorController@emailTutor')->name('tutor_email');
 	Route::post('/tutor/sendemail/', 'TutorController@sendEmailTutor')->name('send_tutor_email');
-	Route::get('/student', 'TutorController@studentDetails')->name('student_list');
+	Route::get('/student', 'TutorController@studentDetails')->name('tutor_student_list');
 	Route::get('/teacher', 'TutorController@teacherDetails')->name('teacher_list');
    //blog
 	Route::get('/blog', 'BlogController@index')->name('blog_list');
@@ -138,6 +138,6 @@ Route::prefix('tutor')->group(function () {
 	Route::get('/student/destroy/{id}/', 'StudentController@destroy')->name('student_delete');
 	Route::get('/student/edit/{id}/', 'StudentController@edit')->name('student_edit');
 	Route::post('/student/update/{id}/', 'StudentController@update')->name('student_update');
-	Route::get('/student/email/{id}/', 'StudentController@emailTutor')->name('student_email');
-	Route::post('/student/sendemail/', 'StudentController@sendEmailTutor')->name('send_student_email');
+	Route::get('/student/email/{id}/', 'StudentController@emailStudent')->name('student_email');
+	Route::post('/student/sendemail/', 'StudentController@sendEmailStudent')->name('send_student_email');
 	});

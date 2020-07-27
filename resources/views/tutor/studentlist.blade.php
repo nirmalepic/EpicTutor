@@ -28,43 +28,46 @@
                             <thead>
                             <tr>
                                 <th>S.No</th>
-                                <th>Tutor Name</th>
-                                <th>Tutor Email</th>
+                                <th>Name</th>
+                                <th>Email</th>
                                 <th>Phone</th>
-                                <th width="10%">Address</th>
-                                <th>Student spe</th>
+                                <th>Class</th>
+                                <th>Address</th>
+                                <th>DOB</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                          @foreach ($students as $tutor)
+
+                          @foreach ($student_data as $student)
                                 <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $tutor->fname }} {{ $tutor->lname }}</td>
-                                <td>{{ $tutor->email }}</td>
-                                <td>{{ $tutor->mobile }}</td>
-                                <td>{{ $tutor->location }}</td>
-                                <td>{{ $tutor->students_specify }}</td>
+                                <td>{{ $student->fname }} {{ $student->lname }}</td>
+                                <td>{{ $student->email }}</td>
+                                <td>{{ $student->mobile }}</td>
+                                <td>{{ $student->class }}</td>
+                                <td>{{ $student->location }}</td>
+                                <td>{{ $student->dob }}</td>
 
                                     <td>
 
-                                 @if($tutor->status==1)
-                                 <a href="{{ route('tutor_status',['id'=>$tutor->id,0]) }}" class=" btn btn-raised btn-success btn-min-width" id="delete-form-{{$tutor->id}}" data-id="delete-form-{{$tutor->id}}" onclick="return confirm('Are you sure, you want to change the status?')">Active</a>
+                                 @if($student->status==1)
+                                 <a href="{{ route('student_status',['id'=>$student->id,0]) }}" class=" btn btn-raised btn-success btn-min-width" id="delete-form-{{$student->id}}" data-id="delete-form-{{$student->id}}" onclick="return confirm('Are you sure, you want to change the status?')">Active</a>
                                 @else
                                
-                                <a href="{{ route('tutor_status',['id'=>$tutor->id,1]) }}" class=" btn btn-raised btn-danger btn-min-width" id="delete-form-{{$tutor->id}}" data-id="delete-form-{{$tutor->id}}" onclick="return confirm('Are you sure, you want to change the status?')">Inactive</a>
+                                <a href="{{ route('student_status',['id'=>$student->id,1]) }}" class=" btn btn-raised btn-danger btn-min-width" id="delete-form-{{$student->id}}" data-id="delete-form-{{$student->id}}" onclick="return confirm('Are you sure, you want to change the status?')">Inactive</a>
                                 @endif
                                     </td>
-
                                 <td>
-                                    <a href="{{ route('tutor_email', $tutor->id)}}" 
-                                       onclick="return confirm('Are you sure, you want to sand  mail to this tutor?')" class="btn btn-primary btn-xs"><i class="fa fa-send"></i> Email</a>
-                                    <a href="{{ route('tutor_edit',$tutor->id) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                                    <a onclick="return confirm('Are you sure, you want to delete this tutor?')" href="{{ route('tutor_delete',$tutor->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> del</a>
+                                    <a href="{{ route('student_email', $student->id)}}" 
+                                       onclick="return confirm('Are you sure, you want to sand  mail to this tutor?')" class="btn btn-primary btn-xs"><i class="fa fa-send"></i> mail</a>
+                                    <a href="{{ route('student_edit',$student->id) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                                    <a onclick="return confirm('Are you sure, you want to delete this tutor?')" href="{{ route('student_delete',$student->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> del</a>
 
                                     </td>
                                 </tr>
+                            
                             @endforeach
                             </tbody>
                         </table>

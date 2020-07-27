@@ -8,7 +8,7 @@
                 <!-- Page Heading -->
                 <div class="go-title">
                     <div class="pull-right">
-                        <a href="{{route('list_main_categories')}}" class="btn btn-default btn-back"><i class="fa fa-arrow-left"></i> Back</a>
+                        <a href="{{route('student_list')}}" class="btn btn-default btn-back"><i class="fa fa-arrow-left"></i> Back</a>
                     </div>
                     <h3>Edit Sub Category</h3>
                     <div class="go-line"></div>

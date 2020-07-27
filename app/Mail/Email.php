@@ -34,6 +34,12 @@ class Email extends Mailable
      elseif($this->data['parameter']=='admin_send_to_tutor'){
         return $this->view('mail.admin_mailsend_to_tutor');
       }
+      elseif($this->data['parameter']=='student_register'){
+        return $this->view('mail.student_register_mail');
+      }
+      elseif($this->data['parameter']=='tutor_send_to_student'){
+        return $this->view('mail.tutor_mailsend_to_student');
+      }
       
     }
 }

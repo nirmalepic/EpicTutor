@@ -9,24 +9,24 @@
                 <!-- Page Heading -->
                 <div class="go-title">
                     <div class="pull-right">
-                        <a href="{!! url('admin/tutor') !!}" class="btn btn-default btn-back"><i class="fa fa-arrow-left"></i> Back</a>
+                        <a href="{!! url('tutor/student') !!}" class="btn btn-default btn-back"><i class="fa fa-arrow-left"></i> Back</a>
                     </div>
-                    <h3>Send Email to tutor</h3>
+                    <h3>Send Email to Student</h3>
                     <div class="go-line"></div>
                 </div>
                 <!-- Page Content -->
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div id="response"></div>
-                        <form method="POST" action="{{route('send_tutor_email')}}" class="form-horizontal form-label-left">
+                        <form method="POST" action="{{route('send_student_email')}}" class="form-horizontal form-label-left">
                         @csrf
-                           <input type="hidden" name="tutor_name" value="{{$tutor->fname}}">
+                           <input type="hidden" name="student_name" value="{{$student->fname}}">
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">To:<span class="required">*</span>
 
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="to" class="form-control col-md-7 col-xs-12" name="to" value="{{$tutor->email}}" type="email">
+                                    <input id="to" class="form-control col-md-7 col-xs-12" name="to" value="{{$student->email}}" type="email">
                                 </div>
                             </div>
                             <div class="item form-group">

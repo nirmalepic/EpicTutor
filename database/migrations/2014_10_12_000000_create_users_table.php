@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('fname');
             $table->string('lname')->nullable();
+            $table->string('tutor_id')->nullable();
+            $table->string('class')->nullable();
             $table->string('email')->unique();
             $table->bigInteger('mobile')->nullable();
             $table->bigInteger('students_specify')->nullable();
@@ -29,7 +31,7 @@ class CreateUsersTable extends Migration
             $table->string('role')->nullable();
             $table->string('location')->nullable();
             $table->string('city')->nullable();
-            $table->bigInteger('pincode')->nullable();
+            $table->integer('pincode')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

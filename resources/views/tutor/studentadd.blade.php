@@ -11,7 +11,7 @@
                     <div class="pull-right">
                         <a href="{!! url('tutor/student') !!}" class="btn btn-default btn-back"><i class="fa fa-arrow-left"></i> Back</a>
                     </div>
-                    <h3>Add Tutors</h3>
+                    <h3>Add Student</h3>
                     <div class="go-line"></div>
                 </div>
                 <!-- Page Content -->
@@ -34,13 +34,20 @@
                         </div>
                         @endif
                         <div id="response"></div>
-                            <form class="form-horizontal form-label-left" method="POST" action="{{ route('tutor_store') }}" enctype="multipart/form-data">
+                            <form class="form-horizontal form-label-left" method="POST" action="{{ route('student_store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name<span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input id="name" class="form-control col-md-7 col-xs-12" name="name" placeholder="Name" value="{{old('name')}}" type="text">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="dob">Date of Birth<span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input  class="form-control col-md-7 col-xs-12" name="dob" placeholder="DOB" value="{{old('dob')}}" type="date" id="datepicker">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -58,7 +65,7 @@
                                 </div>
                             </div>
                                <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Class<span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="classname">Class<span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                    <select class="form-control"  name="classname">
@@ -144,4 +151,5 @@
       }, 5000 ); 
         }); 
     </script>
+   
 @stop

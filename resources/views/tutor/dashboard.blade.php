@@ -19,7 +19,7 @@
                     </div>
                     <div class="border-bottom"></div>
                     <div class="bottom-link">
-                        <a class="detail-link clearfix btn-block" href="{{url('admin/student')}}">
+                        <a class="detail-link clearfix btn-block" href="{{url('tutor/student')}}">
                             <span class="pull-left">View All</span>
                             <span class="pull-right"><i class="fa fa-chevron-circle-right"></i></span>
                         </a>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="border-bottom"></div>
                     <div class="bottom-link">
-                        <a class="detail-link clearfix btn-block" href="{{url('admin/teacher')}}">
+                        <a class="detail-link clearfix btn-block" href="{{url('tutor/teacher')}}">
                             <span class="pull-left">View All</span>
                             <span class="pull-right"><i class="fa fa-chevron-circle-right"></i></span>
                         </a>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="border-bottom"></div>
                     <div class="bottom-link">
-                        <a class="detail-link clearfix btn-block" href="{{url('admin/teacher')}}">
+                        <a class="detail-link clearfix btn-block" href="{{url('tutor/teacher')}}">
                             <span class="pull-left">View All</span>
                             <span class="pull-right"><i class="fa fa-chevron-circle-right"></i></span>
                         </a>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="border-bottom"></div>
                     <div class="bottom-link">
-                        <a class="detail-link clearfix btn-block" href="{{url('admin/teacher')}}">
+                        <a class="detail-link clearfix btn-block" href="{{url('tutor/teacher')}}">
                             <span class="pull-left">View All</span>
                             <span class="pull-right"><i class="fa fa-chevron-circle-right"></i></span>
                         </a>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="border-bottom"></div>
                     <div class="bottom-link">
-                        <a class="detail-link clearfix btn-block" href="{{url('admin/teacher')}}">
+                        <a class="detail-link clearfix btn-block" href="{{url('tutor/teacher')}}">
                             <span class="pull-left">View All</span>
                             <span class="pull-right"><i class="fa fa-chevron-circle-right"></i></span>
                         </a>

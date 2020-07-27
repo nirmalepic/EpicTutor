@@ -74,7 +74,7 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
             <li>
-                <a href="{!! url('tutor/dashboard') !!}"><i class="fa fa-fw fa-home"></i>  Dashboard</a>
+                <a href="{!! url('tutor/dashboard') !!}"><i class="fa fa-fw fa-home"></i> Tutor Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-fw fa-cogs"></i> General Settings</a>

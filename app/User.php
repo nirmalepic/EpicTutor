@@ -23,7 +23,7 @@ class User extends Authenticatable
      * @var array
      */
      protected $fillable = [
-        'fname', 'lname','profile', 'mobile','students_specify', 'otp', 'email', 'password', 'otp_verified_at','status','location','role', 'dob'
+        'fname', 'lname','profile', 'mobile','students_specify', 'otp', 'email', 'password', 'otp_verified_at','status','location','role', 'dob','tutor_id','city','pincode','class',
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -43,6 +43,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+     public function studentData()
+    {
+         //return $this->hasMany('App\User','tutor_id','id');
+         return $this->belongsTo('App\User','tutor_id','id');
+    }
 
 
 }
